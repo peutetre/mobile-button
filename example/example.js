@@ -2,5 +2,5 @@
  * example.js
  */
 
-var mobile-button = require('../lib/index.js');
-console.log(mobile-button());
+var MobileButton = require('../lib/index.js');
+console.log(MobileButton());
