@@ -1,0 +1,40 @@
+{
+  "name": "mobile-button",
+  "version": "0.0.1",
+  "description":"A set of buttons for the mobile web",
+  "author": {
+    "name": "Paul Panserrieu",
+    "email": "paul@42loops.com",
+    "url": "https://github.com/peutetre"
+  },
+  "keywords": [ ],
+  "homepage": "https://github.com/peutetre/mobile-button",
+  "bugs": "https://github.com/peutetre/mobile-button/issues",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/peutetre/mobile-button.git"
+  },
+  "scripts": {
+    "build-test": "./node_modules/browserify/bin/cmd.js ./test/test.js -o ./test/main.js --debug",
+    "build-example": "./node_modules/browserify/bin/cmd.js ./example/example.js -o ./example/main.js --debug",
+    "test": "npm run build-test; grunt"
+  },
+  "dependencies": {
+    "q" : "*" 
+  },
+  "devDependencies": {
+    "mocha": "~1.12.0",
+    "expect.js": "0.2.0",
+    "browserify": "2.29.1",
+    "grunt": "~0.4.0",
+    "grunt-cli": "~0.1.6",
+    "grunt-saucelabs": "4.1.2",
+    "grunt-contrib-connect": "0.5.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
