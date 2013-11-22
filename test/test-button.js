@@ -7,12 +7,48 @@ describe('Button', function () {
     });
 });
 
-describe('button, an instance of Button', function () {
-    it('should raise an Error when given options has no f attribute', function () {
-        expect(function () { new Button(); }).to.throwException("Button options needs a f function.");
+describe('A instance of Button', function () {
+    it('should be initialized if options contains a function and a dom element', function () {
+        var btn = new Button({
+            f : function () { },
+            el : document.createElement('div')
+        });
+        expect(btn.initialized).to.be(true);
     });
     it('should have a set method', function () {
         var btn = new Button({ f: function () { } });
         expect(btn.set).to.be.an('function');
+    });
+    it('should raise an Error when calling .set() with not a function as argument', function () {
+        var btn = new Button();
+        expect(function () { btn.set(1); }).to.throwException('Button set method needs a f function as argument.');
+    });
+    it('should raise an Error when calling .set() when the button is `active`', function () {
+        var btn = new Button();
+        // fake active state
+        btn.active = true;
+        expect(function () { btn.set(function () {}); }).to.throwException("Can't change callback function, button is active.");
+    });
+    it('should raise an Error when calling .attachTo() when button is active', function() {
+        var btn = new Button();
+        // fake active state
+        btn.active = true;
+        expect(function () { btn.attachTo(document.createElement('div')); })
+            .to.throwException("Can't change dom element, button is active.");
+    });
+    it('should raise an Error when calling .attachTo() without DOM element as argument', function() {
+        var btn = new Button();
+        expect(function () { btn.attachTo(); })
+            .to.throwException("Button attachTo method needs a dom element as argument.");
+    });
+    it('should raise an Error when calling .bind() if it\'s not initialized', function() {
+        var btn = new Button();
+        expect(function () { btn.bind(); })
+            .to.throwException("Can't bind an uninitialized button.");
+    });
+    it('should raise an Error when calling .unbind() if it\'s not initialized', function() {
+        var btn = new Button();
+        expect(function () { btn.unbind(); })
+            .to.throwException("Can't unbind an uninitialized button.");
     });
 });
