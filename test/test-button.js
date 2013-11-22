@@ -23,12 +23,6 @@ describe('A instance of Button', function () {
         var btn = new Button();
         expect(function () { btn.set(1); }).to.throwException('Button set method needs a f function as argument.');
     });
-    it('should raise an Error when calling .set() when the button is `active`', function () {
-        var btn = new Button();
-        // fake active state
-        btn.active = true;
-        expect(function () { btn.set(function () {}); }).to.throwException("Can't change callback function, button is active.");
-    });
     it('should raise an Error when calling .attachTo() when button is active', function() {
         var btn = new Button();
         // fake active state
