@@ -3,7 +3,32 @@
         <meta charset="utf-8">
         <title>mobile-button example</title>
     </head>
+    <style type="text/css">
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .button {
+            width: 300px;
+            height: 50px;
+            border: 2px solid rgba(204, 204, 204, 0.37);
+            border-radius: 4px;
+            background: rgba(204, 204, 204, 0.37);
+            text-align: center;
+            line-height: 50px;
+        }
+        .active {
+            background: rgba(204, 204, 204, 0.7);
+            border: 2px solid rgba(204, 204, 204, 0.7);
+        }
+    </style>
     <body>
+        <div id='start1' class='button'>A touchstart button</div>
         <script src="main.js"></script>
     </body>
 </html>
