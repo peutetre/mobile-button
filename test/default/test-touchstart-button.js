@@ -91,6 +91,20 @@ describe('TouchstartButton', function () {
                 done();
             },200);
         });
+        it('.bind should return the button', function () {
+            var btn = new TouchstartBtn({
+                el : document.createElement('div'),
+                f : function () { }
+            });
+            expect(btn.bind()).to.be.equal(btn);
+        });
+        it('.unbind should return the button', function () {
+            var btn = new TouchstartBtn({
+                el : document.createElement('div'),
+                f : function () { }
+            });
+            expect(btn.bind().unbind()).to.be.equal(btn);
+        });
     });
 });
 

@@ -58,5 +58,17 @@ describe('Button', function () {
             expect(btn.el.className).to.be.equal('');
             expect(btn.active).to.be(false);
         });
+        it('.attachTo should return the button', function () {
+            var btn = new Button({
+                f : function () {}
+            });
+            expect(btn.attachTo(document.createElement('div'))).to.be.equal(btn);
+        });
+        it('.set should return the button', function () {
+            var btn = new Button({
+                el : document.createElement('div')
+            });
+            expect(btn.set(function () {})).to.be.equal(btn);
+        });
     });
 });
