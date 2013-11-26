@@ -44,5 +44,19 @@ describe('Button', function () {
             expect(function () { btn.unbind(); })
                 .to.throwException("Can't unbind an uninitialized button.");
         });
+        it('should have a setActive() to style the dom element and set active', function () {
+            var btn = new Button({
+                f : function () {},
+                el : document.createElement('div')
+            });
+
+            btn.setActive(true);
+            expect(btn.el.className).to.be.equal('active');
+            expect(btn.active).to.be(true);
+
+            btn.setActive(false);
+            expect(btn.el.className).to.be.equal('');
+            expect(btn.active).to.be(false);
+        });
     });
 });
