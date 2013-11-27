@@ -2,7 +2,7 @@ var TouchstartBtn = require('../../lib/index').Touchstart,
     Q = require('q'),
     expect = require('expect.js');
 
-describe('TouchstartButton', function () {
+describe('default/TouchstartButton', function () {
     it('must be an function', function () {
         expect(TouchstartBtn).to.be.an('function');
     });
@@ -107,4 +107,3 @@ describe('TouchstartButton', function () {
         });
     });
 });
-
