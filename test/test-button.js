@@ -7,32 +7,25 @@ describe('Button', function () {
     });
 
     describe('instance', function () {
-        it('should be initialized if options contains a function and a dom element', function () {
-            var btn = new Button({
-                f : function () { },
-                el : document.createElement('div')
-            });
-            expect(btn.initialized).to.be(true);
-        });
-        it('should have a set method', function () {
+        it('should have a setF method', function () {
             var btn = new Button({ f: function () { } });
-            expect(btn.set).to.be.an('function');
+            expect(btn.setF).to.be.an('function');
         });
-        it('should raise an Error when calling .set() with not a function as argument', function () {
+        it('should raise an Error when calling .setF() with not a function as argument', function () {
             var btn = new Button();
-            expect(function () { btn.set(1); }).to.throwException('Button set method needs a f function as argument.');
+            expect(function () { btn.setF(1); }).to.throwException('Button setF method needs a f function as argument.');
         });
-        it('should raise an Error when calling .attachTo() when button is active', function() {
+        it('should raise an Error when calling .setEl() when button is active', function() {
             var btn = new Button();
             // fake active state
             btn.active = true;
-            expect(function () { btn.attachTo(document.createElement('div')); })
+            expect(function () { btn.setEl(document.createElement('div')); })
                 .to.throwException("Can't change dom element, button is active.");
         });
-        it('should raise an Error when calling .attachTo() without DOM element as argument', function() {
+        it('should raise an Error when calling .setEl() without DOM element as argument', function() {
             var btn = new Button();
-            expect(function () { btn.attachTo(); })
-                .to.throwException("Button attachTo method needs a dom element as argument.");
+            expect(function () { btn.setEl(); })
+                .to.throwException("Button setEl method needs a dom element as argument.");
         });
         it('should raise an Error when calling .bind() if it\'s not initialized', function() {
             var btn = new Button();
@@ -58,17 +51,17 @@ describe('Button', function () {
             expect(btn.el.className).to.be.equal('');
             expect(btn.active).to.be(false);
         });
-        it('.attachTo should return the button', function () {
+        it('.setEl should return the button', function () {
             var btn = new Button({
                 f : function () {}
             });
-            expect(btn.attachTo(document.createElement('div'))).to.be.equal(btn);
+            expect(btn.setEl(document.createElement('div'))).to.be.equal(btn);
         });
-        it('.set should return the button', function () {
+        it('.setF should return the button', function () {
             var btn = new Button({
                 el : document.createElement('div')
             });
-            expect(btn.set(function () {})).to.be.equal(btn);
+            expect(btn.setF(function () {})).to.be.equal(btn);
         });
     });
 });
