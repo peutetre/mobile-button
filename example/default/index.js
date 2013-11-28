@@ -1,10 +1,10 @@
 /*
- * example.js
+ * default-buttons.js
  */
 
 var Q = require('q'),
     qstart = require('qstart'),
-    MButton = require('../lib/index.js');
+    MButton = require('../../lib/index.js');
 
 function main() {
     var log1 = document.getElementById('log1'),
@@ -49,6 +49,15 @@ function main() {
     btn2.bind();
     btn3.bind();
     btn4.bind();
+
+    var backBtn = new MButton.Touchend({
+            el : document.getElementById('back'),
+            f : function () {
+                window.location = '../index.html';
+            }
+        })
+
+    backBtn.bind();
 
     window.addEventListener('touchstart', function (evt) {
         evt.preventDefault();

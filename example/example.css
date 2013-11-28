@@ -1,0 +1,137 @@
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    box-sizing:border-box;
+}
+html, body {
+    width:100%;
+    height:300px;
+    margin:0;
+    padding:0;
+    background: rgb(36, 36, 36);
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    margin-top: 30px;
+}
+h1 {
+    font-family: sans-serif;
+    color: rgb(158, 158, 158);
+    text-align: center;
+}
+hr {
+    background: rgba(19, 19, 19, 0.62);
+    border-left: none;
+    border-right: none;
+    height: 3px;
+    border-top: 1px solid rgba(235, 235, 235, 0);
+    border-bottom: 1px solid rgba(235, 235, 235, 0.18);
+}
+p {
+    color: rgb(158, 158, 158);
+    font-family: sans-serif;
+    font-size: 18px;
+    padding: 0 10px;
+}
+button {
+    width: 160px;
+    height: 50px;
+    border-radius: 8px;
+    line-height: 50px;
+    padding: 0 5px;
+    text-align: center;
+    background-color: rgb(37, 37, 37);
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(58, 58, 58)), to(rgb(37, 37, 37)));
+    background-image: -webkit-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+    background-image: -moz-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+    background-image: -ms-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+    background-image: -o-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+    -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 1px 1px rgba(240, 240, 240, 0.44);
+    -moz-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+    -ms-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 1px 1px rgba(240, 240, 240, 0.2);
+    font-family: sans-serif;
+    border: none;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: rgb(177, 177, 177);
+    font-size:18px;
+}
+
+button.small {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+
+#back {
+    position: absolute;
+    left:20px;
+    top:10px;
+}
+
+.cell {
+    width: 160px;
+    height: 50px;
+    border-radius: 8px;
+    line-height: 50px;
+    font-family: sans-serif;
+    font-size: 24px;
+    display:inline-block;
+    margin:5px 10px;
+    padding: 0 5px;
+}
+
+.log {
+    padding: 0 0 0 10px;
+    width:100px;
+}
+
+.button-orange {
+    background: rgba(204, 204, 204, 0.37);
+    text-align: center;
+    background-color: #ef9554;
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(231, 154, 56)), to(rgb(247, 128, 0)));
+    background-image: -webkit-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+    background-image: -moz-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+    background-image: -ms-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+    background-image: -o-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+    -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+    -moz-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+    -ms-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+    font-family: sans-serif;
+}
+
+.active {
+    background: rgb(46, 46, 46);
+
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgba(0, 0, 0, 0.08)), to(rgba(255, 255, 255, 0.08)));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+
+    -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                        inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                        0px 2px 2px rgba(255, 255, 255, 0.09);
+    -moz-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                     inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                     0px 2px 2px rgba(255, 255, 255, 0.09);
+    -ms-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                    inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                    0px 2px 2px rgba(255, 255, 255, 0.09);
+    box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                0px 2px 2px rgba(255, 255, 255, 0.09);
+    color: rgb(177, 177, 177);
+}
+
