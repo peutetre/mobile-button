@@ -2,56 +2,115 @@
 
 [![SauceLabs Status](https://saucelabs.com/browser-matrix/mobile-button.svg)](https://saucelabs.com/u/mobile-button)
 
-A set of buttons for the mobile web
+A module of buttons for the mobile web (__⚠__  touch events only __⚠__)...
 
 ## Getting Started
 
 ### Install
 
 ```
-$ npm install mobile-button
+$ npm install mobile-button --save
 ```
 
-### Usage
+### Usage and API
 
-#### import module via browserify
+Require `mobile-button`
 
 ```javascript
-var aModule = require('mobile-button');
-
-// by default, the generator scarffold a function as default module implementation
-aModule();
+var MButton = require('mobile-button');
 ```
 
-#### import the old school style
+### Common API
 
-just import the `lib/index.js` script
+All buttons have the following methods:
 
-### Example
+* __setEl(el:DOMElement)__: set the button dom element
+* __setF(el:DOMElement)__: set the callback function
+* __bind()__: attach all events handlers
+* __unbind()__: remove all events handlers
 
-Install and build the example
+All common options:
+
+* __el:DOMElement__, the button dom element
+* __f:function__, the callback function
+* __activeCls:String__, the css active class
+
+The callback function can return a promise. If so, the button will wait until it's
+fulfilled to return to an inactive state.
+
+#### Default Buttons
+
+Default Buttons are contained only in non scrollable elements.
+
+##### Touchstart Button
+
+A touchstart button triggers his callback on touchstart.
+
+It accepts a __delay__ option.
+
+```javascript
+var btn = new MButton.Touchstart({
+    el: myElement,
+    f: function () {
+        alert('...');
+    },
+    delay: 500 // in ms
+});
+
+btn.bind();
+```
+
+##### Touchend Button
+
+A touchend button triggers his callback on touchend if the finger is in the active
+zone of the underlying button dom element.
+
+This button accepts a __activeBorder__ option in px.
+
+```javascript
+var btn = new MButton.Touchend({
+    el: myElement,
+    f: function () {
+        alert('...');
+    },
+    activeBorder: 20 // in px
+});
+
+btn.bind();
+```
+
+#### Scrollable Y Buttons
+
+Buttons contained in a Y scrollable element.
+
+##### Touchend Button
+
+TODO
+
+#### Scrollable X Buttons
+
+Buttons contained in a X scrollable element.
+
+##### Touchend Button
+
+TODO
+
+### Build
+
+to build examples and tests
 
 ```
-npm run build-example
+npm install
+npm run build
 ```
 
-Open example/index.html in your favorite browser
+### Examples
 
-### Test module
+check the <a href="http://peutetre.github.io/mobile-button/example/">examples</a>
 
-Build tests with
+### Tests
 
-```
-npm run build-test
-```
-
-Then open `test/index.html` to run the tests.
-
-Test module on saucelabs with mocha
-
-```
-npm test
-```
+run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## License
 
