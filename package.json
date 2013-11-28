@@ -23,7 +23,8 @@
   "scripts": {
     "build": "./node_modules/browserify/bin/cmd.js ./test/test.js -o ./test/main.js --debug; ./node_modules/browserify/bin/cmd.js ./example/index.js -o ./example/main.js --debug;./node_modules/browserify/bin/cmd.js ./example/default/index.js -o ./example/default/main.js --debug; ./node_modules/browserify/bin/cmd.js ./example/scrollable-x/index.js -o ./example/scrollable-x/main.js --debug;./node_modules/browserify/bin/cmd.js ./example/scrollable-y/index.js -o ./example/scrollable-y/main.js --debug;",
     "watch": "./node_modules/watchify/bin/cmd.js ./example/index.js -o ./example/main.js --debug;./node_modules/watchify/bin/cmd.js ./example/default/index.js -o ./example/default/main.js --debug;./node_modules/watchify/bin/cmd.js ./test/test.js -o ./test/main.js --debug;./node_modules/watchify/bin/cmd.js ./example/scrollable-x/index.js -o ./example/scrollable-x/main.js --debug;./node_modules/watchify/bin/cmd.js ./example/scrollable-y/index.js -o ./example/scrollable-y/main.js --debug;",
-    "test": "npm run build; grunt"
+    "test": "npm run build; grunt",
+    "clean": "rm test/main.js example/main.js example/default/main.js example/scrollable-x/main.js example/scrollable-y/main.js"
   },
   "dependencies": {
     "q": "~0.9.x"
