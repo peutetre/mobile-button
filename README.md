@@ -2,7 +2,7 @@
 
 [![SauceLabs Status](https://saucelabs.com/browser-matrix/mobile-button.svg)](https://saucelabs.com/u/mobile-button)
 
-A module of buttons for the mobile web (⚠  touch events only ⚠)...
+A module of buttons for the mobile web (__⚠__  touch events only __⚠__)...
 
 ## Getting Started
 
@@ -17,23 +17,23 @@ $ npm install mobile-button --save
 Require `mobile-button`
 
 ```javascript
-var MButtons = require('mobile-button');
+var MButton = require('mobile-button');
 ```
 
 ### Common API
 
 All buttons have the following methods:
 
-* setEl(el:DOMElement): set the button dom element
-* setF(el:DOMElement): set the callback function
-* bind(): attach all events handlers
-* unbind(): remove all events handlers
+* __setEl(el:DOMElement)__: set the button dom element
+* __setF(el:DOMElement)__: set the callback function
+* __bind()__: attach all events handlers
+* __unbind()__: remove all events handlers
 
 All common options:
 
-* el:DOMElement, the button dom element
-* f:function, the callback function
-* activeCls:String, the css active class
+* __el:DOMElement__, the button dom element
+* __f:function__, the callback function
+* __activeCls:String__, the css active class
 
 The callback function can return a promise. If so, the button will wait until it's
 fulfilled to return to an inactive state.
@@ -46,10 +46,10 @@ Default Buttons are contained only in non scrollable elements.
 
 A touchstart button triggers his callback on touchstart.
 
-It accepts a delay option.
+It accepts a __delay__ option.
 
 ```javascript
-var btn = new MButtons.Touchstart({
+var btn = new MButton.Touchstart({
     el: myElement,
     f: function () {
         alert('...');
@@ -65,10 +65,10 @@ btn.bind();
 A touchend button triggers his callback on touchend if the finger is in the active
 zone of the underlying button dom element.
 
-This button accepts a activeBorder option in px.
+This button accepts a __activeBorder__ option in px.
 
 ```javascript
-var btn = new MButtons.Touchend({
+var btn = new MButton.Touchend({
     el: myElement,
     f: function () {
         alert('...');
@@ -110,7 +110,7 @@ check the <a href="http://peutetre.github.io/mobile-button/example/">examples</a
 
 ### Tests
 
-run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a
+run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## License
 
