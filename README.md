@@ -2,7 +2,7 @@
 
 [![SauceLabs Status](https://saucelabs.com/browser-matrix/mobile-button.svg)](https://saucelabs.com/u/mobile-button)
 
-A set of buttons for the mobile web
+A package of buttons for the mobile web (touch events only!)
 
 ## Getting Started
 
@@ -12,46 +12,45 @@ A set of buttons for the mobile web
 $ npm install mobile-button
 ```
 
-### Usage
+### Usage and API
 
-#### import module via browserify
+Require `mobile-button`
 
 ```javascript
-var aModule = require('mobile-button');
-
-// by default, the generator scarffold a function as default module implementation
-aModule();
-```
-
-#### import the old school style
-
-just import the `lib/index.js` script
-
-### Example
-
-Install and build the example
+var MButtons = require('mobile-button');
 
 ```
-npm run build-example
+
+#### Default Buttons
+
+##### Touchstart Button
+
+##### Touchend Button
+
+#### Scrollable Y Buttons
+
+##### Touchend Button
+
+#### Scrollable X Buttons
+
+##### Touchend Button
+
+### Build
+
+to build examples and tests
+
+```
+npm install
+npm run build
 ```
 
-Open example/index.html in your favorite browser
+### Examples
 
-### Test module
+check the <a href="http://peutetre.github.io/mobile-button/example/">examples</a>
 
-Build tests with
+### Tests
 
-```
-npm run build-test
-```
-
-Then open `test/index.html` to run the tests.
-
-Test module on saucelabs with mocha
-
-```
-npm test
-```
+run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a
 
 ## License
 
