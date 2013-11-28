@@ -49,6 +49,10 @@ function main() {
     btn2.bind();
     btn3.bind();
     btn4.bind();
+
+    window.addEventListener('touchstart', function (evt) {
+        evt.preventDefault();
+    }, false);
 }
 
 qstart.then(main).done();

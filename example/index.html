@@ -1,6 +1,9 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name = "viewport" content ="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <title>mobile-button example</title>
     </head>
     <style type="text/css">
@@ -11,49 +14,104 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            -ms-box-sizing:border-box;
+            box-sizing:border-box;
+        }
+        html, body {
+            width:100%;
+            height:300px;
+            margin:0;
+            padding:0;
+            background: rgb(36, 36, 36);
+        }
+        body {
+            margin-top: 20px;
         }
         .cell {
-            width: 240px;
+            width: 160px;
             height: 50px;
-            border-radius: 4px;
+            border-radius: 8px;
             line-height: 50px;
-            font-family: Palatino;
+            font-family: sans-serif;
             font-size: 24px;
             display:inline-block;
-            margin:10px;
+            margin:5px 10px;
             padding: 0 5px;
         }
         .button {
-            border: 2px solid rgba(204, 204, 204, 0.37);
             background: rgba(204, 204, 204, 0.37);
             text-align: center;
+            background-color: #ef9554;
+            background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(231, 154, 56)), to(rgb(247, 128, 0)));
+            background-image: -webkit-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+            background-image: -moz-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+            background-image: -ms-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+            background-image: -o-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+            -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            -moz-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            -ms-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            font-family: sans-serif;
         }
         .active {
-            background: rgba(204, 204, 204, 0.7);
-            border: 2px solid rgba(204, 204, 204, 0.7);
+            background: rgb(46, 46, 46);
+
+            background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgba(0, 0, 0, 0.08)), to(rgba(255, 255, 255, 0.08)));
+            background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+            background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+            background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+            background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+
+            -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                                inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                                0px 2px 2px rgba(255, 255, 255, 0.09);
+            -moz-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                             inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                             0px 2px 2px rgba(255, 255, 255, 0.09);
+            -ms-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                            inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                            0px 2px 2px rgba(255, 255, 255, 0.09);
+            box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                        inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                        0px 2px 2px rgba(255, 255, 255, 0.09);
+            color: rgb(156, 156, 156);
         }
         .log {
-            border: 2px solid rgba(204, 20, 20, 0.37);
-            background: rgba(204, 20, 20, 0.37);
-            text-align: left;
+            padding: 0 0 0 10px;
+            width:300px
+        }
+        h1 {
+            font-family: sans-serif;
+            color: rgb(158, 158, 158);
+            text-align: center;
+        }
+        p {
+            color: rgb(158, 158, 158);
+            font-family: sans-serif;
+            font-size: 18px;
+            padding: 0 10px;
         }
     </style>
     <body>
+        <h1>Mobile Button</h1>
+        <p>Example for the default implementation of Touchstart and Touchend buttons:</p>
         <div>
-            <div id='start1' class='cell button'>A touchstart button</div>
-            <div class='cell log'> Log: <span id='log1'></span></div>
+            <div id='start1' class='cell button'>Touchstart</div>
+            <div class='cell log active'> $ <span id='log1'></span></div>
         </div>
         <div>
-            <div id='start2' class='cell button'>A touchstart button</div>
-            <div class='cell log'> Log: <span id='log2'></span></div>
+            <div id='start2' class='cell button'>Touchstart</div>
+            <div class='cell log active'> $ <span id='log2'></span></div>
         </div>
         <div>
-            <div id='end1' class='cell button'>A touchend button</div>
-            <div class='cell log'> Log: <span id='log3'></span></div>
+            <div id='end1' class='cell button'>Touchend</div>
+            <div class='cell log active'> $ <span id='log3'></span></div>
         </div>
         <div>
-            <div id='end2' class='cell button'>A touchend button</div>
-            <div class='cell log'> Log: <span id='log4'></span></div>
+            <div id='end2' class='cell button'>Touchend</div>
+            <div class='cell log active'> $ <span id='log4'></span></div>
         </div>
         <script src="main.js"></script>
     </body>
