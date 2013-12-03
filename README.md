@@ -148,6 +148,21 @@ check the <a href="http://peutetre.github.io/mobile-button/example/">examples</a
 
 run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
+## ChangeLog
+
+#### v0.0.2 12-03-2013
+
+* preventDefault some `touchmove` for chrome on android
+* fix ie tests
+
+#### v0.0.1 12-03-2013
+
+* initial release
+
+## References
+
+* Handling touchevents on scroll (or why the 0.0.3 will include iscroll for scrollables...): https://docs.google.com/document/d/12k_LL_Ot9GjF8zGWP9eI_3IMbSizD72susba0frg44Y
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
