@@ -1,6 +1,17 @@
 var TouchendBtn = require('../../lib/index').Touchend,
     Q = require('q'),
-    expect = require('expect.js');
+    expect = require('expect.js'),
+    initElement = function () {
+        var el = document.createElement('div');
+        el.style.width = '100px';
+        el.style.height = '100px';
+        el.style.position = 'absolute';
+        el.style.zIndex = '100';
+        el.style.top = 0;
+        el.style.left = 0;
+        window.document.body.appendChild(el);
+        return el;
+    };
 
 describe('default/TouchendButton', function () {
     it('must be an function', function () {
@@ -9,7 +20,7 @@ describe('default/TouchendButton', function () {
     describe('instance', function () {
         it('should raise an Error when calling .bind() if already binded', function () {
             var btn = new TouchendBtn({
-                    el : document.createElement('div'),
+                    el : initElement(),
                     f : function () { }
                 });
             btn.bind();
@@ -17,14 +28,14 @@ describe('default/TouchendButton', function () {
         });
         it('should raise an Error when calling .unbind() if unbinded', function () {
             var btn = new TouchendBtn({
-                    el : document.createElement('div'),
+                    el : initElement(),
                     f : function () { }
                 });
             expect(function () { btn.unbind(); }).to.throwException("Can't unbind a unbinded button.");
         });
         it('should have a setActiveBorder method', function () {
             var btn = new TouchendBtn({
-                    el : document.createElement('div'),
+                    el : initElement(),
                     f : function () { }
                 });
             expect(btn.setActiveBorder).to.be.an('function');
@@ -32,7 +43,7 @@ describe('default/TouchendButton', function () {
         it('can not be activated if already activated', function (done) {
             var i = 0,
                 btn = new TouchendBtn({
-                    el : document.createElement('div'),
+                    el : initElement(),
                     f : function () { i = i+1; return Q.delay(200); }
                 });
             btn.bind();
@@ -51,7 +62,7 @@ describe('default/TouchendButton', function () {
         });
        it('should add the `.active` css class on the underlying DOM element when active', function (done) {
             var btn = new TouchendBtn({
-                el : document.createElement('div'),
+                el : initElement(),
                 f : function () { return Q.delay(200); }
             });
 
@@ -67,7 +78,7 @@ describe('default/TouchendButton', function () {
         });
         it('should remove the `.active` css class on the underlying DOM element when callback ended', function (done) {
             var btn = new TouchendBtn({
-                el : document.createElement('div'),
+                el : initElement(),
                 f : function () { return Q.delay(100); }
             });
 
@@ -83,14 +94,14 @@ describe('default/TouchendButton', function () {
         });
         it('.bind should return the button', function () {
             var btn = new TouchendBtn({
-                el : document.createElement('div'),
+                el : initElement(),
                 f : function () { }
             });
             expect(btn.bind()).to.be.equal(btn);
         });
         it('.unbind should return the button', function () {
             var btn = new TouchendBtn({
-                el : document.createElement('div'),
+                el : initElement(),
                 f : function () { }
             });
             expect(btn.bind().unbind()).to.be.equal(btn);
