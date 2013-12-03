@@ -97,6 +97,7 @@
             font-family: sans-serif;
             font-size: 18px;
             padding: 0 10px;
+            margin: 5px 0;
         }
         ul {
             margin:0;
@@ -162,13 +163,13 @@
             border-bottom: 1px solid rgba(235, 235, 235, 0.18);
         }
         header {
-            height:120px;
+            height:150px;
         }
         section {
-            height:-webkit-calc(100% - 120px);
-            height:-moz-calc(100% - 120px);
-            height:-ms-calc(100% - 120px);
-            height:calc(100% - 120px);
+            height:-webkit-calc(100% - 150px);
+            height:-moz-calc(100% - 150px);
+            height:-ms-calc(100% - 150px);
+            height:calc(100% - 150px);
             position:relative;
             overflow-x: scroll;
             /* would love to use this for ios (currently broken on ios 7.0.4)
@@ -178,14 +179,20 @@
         .btn {
             color:rgb(219, 96, 96);
         }
+        hr.end{
+            position: absolute;
+            top: 170px;
+            z-index: 10000;
+            width: 100%;
+        }
     </style>
     <body>
         <header>
             <button id='back'>◀</button>
-            <h1>ScrollableY</h1>
+            <h1>ScrollableX</h1>
             <hr>
-            <p>Example for the scrollable Y implementation of the Touchend buttons:</p>
-            <hr>
+            <p>Example for the scrollable X implementation of the Touchend buttons:</p>
+            <hr class='end'>
         </header>
         <section>
             <table cellspacing="0">
