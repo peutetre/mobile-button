@@ -115,7 +115,7 @@ describe('scrollableY/TouchendButton', function () {
             btn.bind();
             // fake activation
             btn.onTouchstart({ changedTouches:[{ identifier : 0, clientY:0, clientX: 0 }] });
-            btn.onTouchmove({ changedTouches:[{ identifier : 0, clientY:12, clientX: 0 }] });
+            btn.onTouchmove({ changedTouches:[{ identifier : 0, clientY:12, clientX: 0}], preventDefault:function () {} });
             btn.onTouchend({ changedTouches:[{ identifier : 0, clientY:12, clientX: 0 }] });
             setTimeout(function () {
                 expect(flag).to.be(false);
@@ -131,7 +131,7 @@ describe('scrollableY/TouchendButton', function () {
             btn.bind();
             // fake activation
             btn.onTouchstart({ changedTouches:[{ identifier : 0, clientY:0, clientX: 0 }] });
-            btn.onTouchmove({ changedTouches:[{ identifier : 0, clientY:5, clientX: 0 }] });
+            btn.onTouchmove({ changedTouches:[{ identifier : 0, clientY:5, clientX: 0 }], preventDefault:function () {} });
             btn.onTouchend({ changedTouches:[{ identifier : 0, clientY:5, clientX: 0 }] });
             setTimeout(function () {
                 expect(flag).to.be(true);
