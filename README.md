@@ -148,6 +148,10 @@ check the <a href="http://peutetre.github.io/mobile-button/example/">examples</a
 
 run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
+## ChangeLog
+
+* v0.0.1 12-03-2013 initial release
+
 ## License
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
