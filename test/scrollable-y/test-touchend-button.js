@@ -1,8 +1,8 @@
-var TouchendBtn = require('../../lib/index').Touchend,
+var TouchendBtn = require('../../lib/index').ScrollableY.Touchend,
     Q = require('q'),
     expect = require('expect.js');
 
-describe('default/TouchendButton', function () {
+describe('scrollableY/TouchendButton', function () {
     it('must be an function', function () {
         expect(TouchendBtn).to.be.an('function');
     });
@@ -94,6 +94,38 @@ describe('default/TouchendButton', function () {
                 f : function () { }
             });
             expect(btn.bind().unbind()).to.be.equal(btn);
+        });
+        it('should not trigger his callback if finger moved more than 10px in the y axis', function (done) {
+            var flag = false,
+                btn = new TouchendBtn({
+                    el : document.createElement('div'),
+                    f : function () { flag = true; }
+                });
+            btn.bind();
+            // fake activation
+            btn.onTouchstart({ changedTouches:[{ identifier : 0, clientY:0, clientX: 0 }] });
+            btn.onTouchmove({ changedTouches:[{ identifier : 0, clientY:12, clientX: 0 }] });
+            btn.onTouchend({ changedTouches:[{ identifier : 0, clientY:12, clientX: 0 }] });
+            setTimeout(function () {
+                expect(flag).to.be(false);
+                done();
+            },50);
+        });
+        it('should trigger his callback if finger moved less than 10px in the y axis', function (done) {
+            var flag = false,
+                btn = new TouchendBtn({
+                    el : document.createElement('div'),
+                    f : function () { flag = true; }
+                });
+            btn.bind();
+            // fake activation
+            btn.onTouchstart({ changedTouches:[{ identifier : 0, clientY:0, clientX: 0 }] });
+            btn.onTouchmove({ changedTouches:[{ identifier : 0, clientY:5, clientX: 0 }] });
+            btn.onTouchend({ changedTouches:[{ identifier : 0, clientY:5, clientX: 0 }] });
+            setTimeout(function () {
+                expect(flag).to.be(true);
+                done();
+            },50);
         });
     });
 });

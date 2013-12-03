@@ -81,19 +81,55 @@ btn.bind();
 
 #### Scrollable Y Buttons
 
-Buttons contained in a Y scrollable element.
+Buttons contained in a Y scrollable element (on ios 5+ with -webkit-overflow-scrolling:touch;).
 
 ##### Touchend Button
 
-TODO
+This touchend button will get canceled if the fingermove more than __tolerance__
+pixels in the Y axis. It extends the default touchend button.
+
+This button accepts a __tolerance__ option in px.
+
+```javascript
+
+var ScrollableBtn = require('mobile-button').ScrollableY;
+
+var btn = new ScrollableBtn.Touchend({
+    el: myElement,
+    f: function () {
+        alert('...');
+    },
+    tolerance: 5 // in px
+});
+
+btn.bind();
+```
 
 #### Scrollable X Buttons
 
-Buttons contained in a X scrollable element.
+Buttons contained in a X scrollable element  (on ios 5+ with -webkit-overflow-scrolling:touch;).
 
 ##### Touchend Button
 
-TODO
+This touchend button will get canceled if the fingermove more than __tolerance__
+pixels in the X axis. It extends the default touchend button.
+
+This button accepts a __tolerance__ option in px.
+
+```javascript
+
+var ScrollableBtn = require('mobile-button').ScrollableX;
+
+var btn = new ScrollableBtn.Touchend({
+    el: myElement,
+    f: function () {
+        alert('...');
+    },
+    tolerance: 5 // in px
+});
+
+btn.bind();
+```
 
 ### Build
 
