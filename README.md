@@ -150,6 +150,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.0.3 12-05-2013
+
+* using iscroll-browserify for scrollable views
+
 #### v0.0.2 12-03-2013
 
 * preventDefault some `touchmove` for chrome on android
