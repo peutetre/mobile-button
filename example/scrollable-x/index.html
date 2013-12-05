@@ -166,15 +166,17 @@
             height:150px;
         }
         section {
-            height:-webkit-calc(100% - 150px);
-            height:-moz-calc(100% - 150px);
-            height:-ms-calc(100% - 150px);
-            height:calc(100% - 150px);
-            position:relative;
-            overflow-x: scroll;
-            /* would love to use this for ios (currently broken on ios 7.0.4)
-            -webkit-overflow-scrolling:touch;
-            */
+            height:-webkit-calc(100% - 180px);
+            height:-moz-calc(100% - 180px);
+            height:-ms-calc(100% - 180px);
+            height:calc(100% - 180px);
+            position: absolute;
+            z-index: 1;
+            top: 180px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
         }
         .btn {
             color:rgb(219, 96, 96);
@@ -185,6 +187,28 @@
             z-index: 10000;
             width: 100%;
         }
+        .scroller {
+            position: absolute;
+            z-index: 1;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            height:100%;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+
     </style>
     <body>
         <header>
@@ -194,40 +218,42 @@
             <p>Example for the scrollable X implementation of the Touchend buttons:</p>
             <hr class='end'>
         </header>
-        <section>
-            <table cellspacing="0">
-                <tr>
-                    <td>1</td>
-                    <td class='btn' id='btn1'>Hello I am a touchend Button</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>1</td>
-                    <td class='btn' id='btn2'>Hello I am another touchend Button</td>
-                    <td>2</td>
-                    <td class='btn' id='btn3'>Yet another touchend Button</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>1</td>
-                </tr>
-            </table>
+        <section id="wrapper">
+            <div class='scroller'>
+                <table cellspacing="0">
+                    <tr>
+                        <td>1</td>
+                        <td class='btn' id='btn1'>Hello I am a touchend Button</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>1</td>
+                        <td class='btn' id='btn2'>Hello I am another touchend Button</td>
+                        <td>2</td>
+                        <td class='btn' id='btn3'>Yet another touchend Button</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
         </section>
         <script src="main.js"></script>
     </body>
