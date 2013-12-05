@@ -144,6 +144,11 @@ npm run build
 
 check the <a href="http://peutetre.github.io/mobile-button/example/">examples</a>
 
+![button example 0](https://raw.github.com/peutetre/mobile-button/master/example/images/0.png)
+![button example 1](https://raw.github.com/peutetre/mobile-button/master/example/images/1.png)
+![button example 2](https://raw.github.com/peutetre/mobile-button/master/example/images/2.png)
+![button example 3](https://raw.github.com/peutetre/mobile-button/master/example/images/3.png)
+
 ### Tests
 
 run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
