@@ -144,7 +144,7 @@ npm run build
 
 Check the <a href="http://peutetre.github.io/mobile-button/example/">examples</a>.
 
-Design taken from @noxdzine <a href="http://dribbble.com/shots/533278-Orange-Ui-kit-Free-PSD)">Orange UI kit</a>
+Design taken from [@Noxdzine](http://twitter.com/noxdzine/) <a href="http://dribbble.com/shots/533278-Orange-Ui-kit-Free-PSD)">Orange UI kit</a>
 
 
 ![button example 0](https://raw.github.com/peutetre/mobile-button/master/example/images/0.png)
