@@ -43,7 +43,8 @@
     "grunt-saucelabs": "4.1.2",
     "grunt-contrib-connect": "0.5.0",
     "watchify": "~0.4.1",
-    "qstart": "0.0.4"
+    "qstart": "0.0.4",
+    "iscroll-browserify": "0.0.0"
   },
   "licenses": [
     {
