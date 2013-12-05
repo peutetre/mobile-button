@@ -22,8 +22,12 @@
     "url": "git://github.com/peutetre/mobile-button.git"
   },
   "scripts": {
-    "build": "./node_modules/browserify/bin/cmd.js ./test/test.js -o ./test/main.js --debug; ./node_modules/browserify/bin/cmd.js ./example/index.js -o ./example/main.js --debug;./node_modules/browserify/bin/cmd.js ./example/default/index.js -o ./example/default/main.js --debug; ./node_modules/browserify/bin/cmd.js ./example/scrollable-x/index.js -o ./example/scrollable-x/main.js --debug;./node_modules/browserify/bin/cmd.js ./example/scrollable-y/index.js -o ./example/scrollable-y/main.js --debug;",
-    "watch": "./node_modules/watchify/bin/cmd.js ./example/index.js -o ./example/main.js --debug;./node_modules/watchify/bin/cmd.js ./example/default/index.js -o ./example/default/main.js --debug;./node_modules/watchify/bin/cmd.js ./test/test.js -o ./test/main.js --debug;./node_modules/watchify/bin/cmd.js ./example/scrollable-x/index.js -o ./example/scrollable-x/main.js --debug;./node_modules/watchify/bin/cmd.js ./example/scrollable-y/index.js -o ./example/scrollable-y/main.js --debug;",
+    "build-test": "./node_modules/browserify/bin/cmd.js ./test/test.js -o ./test/main.js --debug;",
+    "build-ex": "./node_modules/browserify/bin/cmd.js ./example/index.js -o ./example/main.js --debug",
+    "build-ex1": "./node_modules/browserify/bin/cmd.js ./example/default/index.js -o ./example/default/main.js --debug",
+    "build-ex2": "./node_modules/browserify/bin/cmd.js ./example/scrollable-x/index.js -o ./example/scrollable-x/main.js --debug",
+    "build-ex3": "./node_modules/browserify/bin/cmd.js ./example/scrollable-y/index.js -o ./example/scrollable-y/main.js --debug;",
+    "build": "npm run build-test; npm run build-ex; npm run build-ex1; npm run build-ex2; npm run build-ex3;",
     "test": "npm run build; grunt",
     "clean": "rm test/main.js example/main.js example/default/main.js example/scrollable-x/main.js example/scrollable-y/main.js"
   },
