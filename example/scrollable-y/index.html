@@ -102,6 +102,7 @@
         ul {
             margin:0;
             padding:0;
+            list-style: none;
         }
         button {
             width: 40px;
@@ -167,14 +168,38 @@
             height:150px;
         }
         section {
-            height:-webkit-calc(100% - 150px);
-            height:-moz-calc(100% - 150px);
-            height:-ms-calc(100% - 150px);
-            height:calc(100% - 150px);
-            overflow-y:scroll;
-            /* would love to use this for ios (currently broken on ios 7.0.4)
-            -webkit-overflow-scrolling:touch;
-            */
+            height:-webkit-calc(100% - 180px);
+            height:-moz-calc(100% - 180px);
+            height:-ms-calc(100% - 180px);
+            height:calc(100% - 180px);
+            position: absolute;
+            z-index: 1;
+            top: 180px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+        .scroller {
+            position: absolute;
+            z-index: 1;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            width: 100%;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            text-size-adjust: none;
         }
         .btn {
             color:rgb(219, 96, 96);
@@ -194,41 +219,43 @@
             <p>Example for the scrollable Y implementation of the Touchend buttons:</p>
             <hr class='end'>
         </header>
-        <section>
-            <ul>
-                <li>Order some Chocolate?</li>
-                <li class='btn' id='btn1'>Hello I am a touchend Button</li>
-                <li>Order some Water?</li>
-                <li>Order some Bread?</li>
-                <li>Order some Wine?</li>
-                <li>Order some Bacon?</li>
-                <li>Order some Chocolate?</li>
-                <li class='btn' id='btn2'>Hello I am another touchend Button</li>
-                <li>Order some Milk?</li>
-                <li>Order some Water?</li>
-                <li>Order some Bread?</li>
-                <li>Order some Wine?</li>
-                <li class='btn' id='btn3'>Yet another touchend Button</li>
-                <li>Order some Bacon?</li>
-                <li>Order some Chocolate?</li>
-                <li>Order some Milk?</li>
-                <li>Order some Water?</li>
-                <li>Order some Bread?</li>
-                <li>Order some Wine?</li>
-                <li>Order some Bacon?</li>
-                <li>Order some Chocolate?</li>
-                <li>Order some Milk?</li>
-                <li>Order some Water?</li>
-                <li>Order some Bread?</li>
-                <li>Order some Wine?</li>
-                <li>Order some Bacon?</li>
-                <li>Order some Chocolate?</li>
-                <li>Order some Milk?</li>
-                <li>Order some Water?</li>
-                <li>Order some Bread?</li>
-                <li>Order some Wine?</li>
-                <li>Order some Bacon?</li>
-            </ul>
+        <section id="wrapper">
+            <div class="scroller">
+                <ul>
+                    <li>Order some Chocolate?</li>
+                    <li class='btn' id='btn1'>Hello I am a touchend Button</li>
+                    <li>Order some Water?</li>
+                    <li>Order some Bread?</li>
+                    <li>Order some Wine?</li>
+                    <li>Order some Bacon?</li>
+                    <li>Order some Chocolate?</li>
+                    <li class='btn' id='btn2'>Hello I am another touchend Button</li>
+                    <li>Order some Milk?</li>
+                    <li>Order some Water?</li>
+                    <li>Order some Bread?</li>
+                    <li>Order some Wine?</li>
+                    <li class='btn' id='btn3'>Yet another touchend Button</li>
+                    <li>Order some Bacon?</li>
+                    <li>Order some Chocolate?</li>
+                    <li>Order some Milk?</li>
+                    <li>Order some Water?</li>
+                    <li>Order some Bread?</li>
+                    <li>Order some Wine?</li>
+                    <li>Order some Bacon?</li>
+                    <li>Order some Chocolate?</li>
+                    <li>Order some Milk?</li>
+                    <li>Order some Water?</li>
+                    <li>Order some Bread?</li>
+                    <li>Order some Wine?</li>
+                    <li>Order some Bacon?</li>
+                    <li>Order some Chocolate?</li>
+                    <li>Order some Milk?</li>
+                    <li>Order some Water?</li>
+                    <li>Order some Bread?</li>
+                    <li>Order some Wine?</li>
+                    <li>Order some Bacon?</li>
+                </ul>
+            </div>
         </section>
         <script src="main.js"></script>
     </body>

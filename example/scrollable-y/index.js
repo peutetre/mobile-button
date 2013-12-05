@@ -4,10 +4,14 @@
 
 var Q = require('q'),
     qstart = require('qstart'),
+    IScroll = require('iscroll-browserify'),
     MButton = require('../../lib/index.js');
 
 function main() {
     var h1 = document.querySelector('h1'),
+        scrollView = new IScroll('#wrapper', {
+            mouseWheel: true
+        }),
         backBtn = new MButton.Touchend({
             el : document.getElementById('back'),
             f : function () {
