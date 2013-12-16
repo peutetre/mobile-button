@@ -158,6 +158,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.0.4 12-16-2013
+
+* back to iscroll, 5.0.9 supports commonjs
+
 #### v0.0.3 12-05-2013
 
 * using iscroll-browserify for scrollable views

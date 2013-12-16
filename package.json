@@ -44,7 +44,7 @@
     "grunt-contrib-connect": "0.5.0",
     "watchify": "~0.4.1",
     "qstart": "0.0.4",
-    "iscroll-browserify": "0.0.0"
+    "iscroll": "5.0.9"
   },
   "licenses": [
     {
