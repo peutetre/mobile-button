@@ -4,7 +4,7 @@
 
 var Q = require('q'),
     qstart = require('qstart'),
-    IScroll = require('iscroll-browserify'),
+    IScroll = require('iscroll'),
     MButton = require('../../lib/index.js');
 
 function main() {
