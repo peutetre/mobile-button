@@ -158,6 +158,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.1.0 01-16-2014
+
+* upgrade q to 1.0.0
+
 #### v0.0.4 12-16-2013
 
 * back to iscroll, 5.0.9 supports commonjs

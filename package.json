@@ -1,6 +1,6 @@
 {
   "name": "mobile-button",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A set of buttons for the mobile web (touch events only!)",
   "author": {
     "name": "Paul Panserrieu",
@@ -32,7 +32,7 @@
     "clean": "rm test/main.js example/main.js example/default/main.js example/scrollable-x/main.js example/scrollable-y/main.js"
   },
   "dependencies": {
-    "q": "~0.9.x"
+    "q": "1.0.x"
   },
   "devDependencies": {
     "mocha": "~1.12.0",
@@ -43,8 +43,8 @@
     "grunt-saucelabs": "4.1.2",
     "grunt-contrib-connect": "0.5.0",
     "watchify": "~0.4.1",
-    "qstart": "0.0.4",
-    "iscroll": "5.0.9"
+    "qstart": "0.1.x",
+    "iscroll": "5.1.1"
   },
   "licenses": [
     {
