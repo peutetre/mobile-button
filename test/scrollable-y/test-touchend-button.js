@@ -60,7 +60,7 @@ describe('scrollableY/TouchendButton', function () {
                 done();
             },300);
         });
-       it('should add the `.active` css class on the underlying DOM element when active', function (done) {
+       it('should add the `.active` css class on the underlying DOM element when touched', function (done) {
             var btn = new TouchendBtn({
                 el : initElement(),
                 f : function () { return Q.delay(200); }
@@ -69,14 +69,11 @@ describe('scrollableY/TouchendButton', function () {
             btn.bind();
             // fake activation
             btn.onTouchstart({ changedTouches:[{ identifier : 0 }] });
+            expect(btn.el.classList.contains('active')).to.be(true);
             btn.onTouchend({ changedTouches:[{ identifier : 0 }] });
-
-            setTimeout(function () {
-                expect(btn.el.classList.contains('active')).to.be(true);
-                done();
-            },100);
+            done();
         });
-        it('should remove the `.active` css class on the underlying DOM element when callback ended', function (done) {
+        it('should remove the `.active` css class on the underlying DOM element after being touched', function (done) {
             var btn = new TouchendBtn({
                 el : initElement(),
                 f : function () { return Q.delay(100); }
@@ -86,11 +83,8 @@ describe('scrollableY/TouchendButton', function () {
             // fake activation
             btn.onTouchstart({ changedTouches:[{ identifier : 0 }] });
             btn.onTouchend({ changedTouches:[{ identifier : 0 }] });
-
-            setTimeout(function () {
-                expect(btn.el.classList.contains('active')).to.be(false);
-                done();
-            },200);
+            expect(btn.el.classList.contains('active')).to.be(false);
+            done();
         });
         it('.bind should return the button', function () {
             var btn = new TouchendBtn({
