@@ -158,6 +158,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.1.1 01-20-2014
+
+* Touchend buttons: remove active class on `touchend`
+
 #### v0.1.0 01-16-2014
 
 * upgrade q to 1.0.0
