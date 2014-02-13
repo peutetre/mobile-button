@@ -158,6 +158,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.1.2 02-13-2014
+
+* fix buttons when f the callback button function returns rejected promises.
+
 #### v0.1.1 01-20-2014
 
 * Touchend buttons: remove active class on `touchend`
