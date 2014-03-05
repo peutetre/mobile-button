@@ -2,7 +2,7 @@
 
 [![SauceLabs Status](https://saucelabs.com/browser-matrix/mobile-button.svg)](https://saucelabs.com/u/mobile-button)
 
-A module of buttons for the mobile web (__⚠__  touch events only __⚠__)...
+A module of buttons for the mobile web
 
 ## Getting Started
 
@@ -157,6 +157,10 @@ Design taken from [@Noxdzine](http://twitter.com/noxdzine/) <a href="http://drib
 run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
+
+#### v0.2.0 03-05-2014
+
+* quick and dirty click buttons...
 
 #### v0.1.2 02-13-2014
 

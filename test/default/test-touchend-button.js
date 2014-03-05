@@ -1,4 +1,4 @@
-var TouchendBtn = require('../../lib/index').Touchend,
+var TouchendBtn = require('../../lib/default/touchend-button'),
     Q = require('q'),
     expect = require('expect.js'),
     initElement = function () {
