@@ -1,4 +1,4 @@
-var TouchendBtn = require('../../lib/index').ScrollableX.Touchend,
+var TouchendBtn = require('../../lib/scrollable-x/touchend-button'),
     Q = require('q'),
     expect = require('expect.js'),
     initElement = function () {

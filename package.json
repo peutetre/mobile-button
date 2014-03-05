@@ -1,7 +1,7 @@
 {
   "name": "mobile-button",
-  "version": "0.1.2",
-  "description": "A set of buttons for the mobile web (touch events only!)",
+  "version": "0.2.0",
+  "description": "A set of buttons for the mobile web",
   "author": {
     "name": "Paul Panserrieu",
     "email": "paul@42loops.com",
