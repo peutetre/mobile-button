@@ -13,7 +13,7 @@ describe('default/TouchstartButton', function () {
                     el : document.createElement('div'),
                     f : function () { }
                 });
-            btn.bind();
+
             expect(function () { btn.bind(); }).to.throwException("Can't bind an already binded button.");
         });
         it('should raise an Error when calling .unbind() if unbinded', function () {
@@ -21,6 +21,7 @@ describe('default/TouchstartButton', function () {
                     el : document.createElement('div'),
                     f : function () { }
                 });
+            btn.unbind();
             expect(function () { btn.unbind(); }).to.throwException("Can't unbind a unbinded button.");
         });
         it('can not be activated if already activated', function (done) {
@@ -29,7 +30,7 @@ describe('default/TouchstartButton', function () {
                     el : document.createElement('div'),
                     f : function () { i = i+1; return Q.delay(200); }
                 });
-            btn.bind();
+
             // first fake activation
             btn.onTouchstart({});
             setTimeout(function () {
@@ -50,7 +51,7 @@ describe('default/TouchstartButton', function () {
                     f : function () { flag = true; },
                     delay : 1000
                 });
-            btn.bind();
+
             // fake activation
             btn.onTouchstart({});
             setTimeout(function () {
@@ -67,7 +68,6 @@ describe('default/TouchstartButton', function () {
                 f : function () { return Q.delay(200); }
             });
 
-            btn.bind();
             // fake activation
             btn.onTouchstart({});
 
@@ -82,7 +82,6 @@ describe('default/TouchstartButton', function () {
                 f : function () { return Q.delay(100); }
             });
 
-            btn.bind();
             // fake activation
             btn.onTouchstart({});
 
@@ -94,14 +93,16 @@ describe('default/TouchstartButton', function () {
         it('.bind should return the button', function () {
             var btn = new TouchstartBtn({
                 el : document.createElement('div'),
-                f : function () { }
+                f : function () { },
+                autobind: false
             });
             expect(btn.bind()).to.be.equal(btn);
         });
         it('.unbind should return the button', function () {
             var btn = new TouchstartBtn({
                 el : document.createElement('div'),
-                f : function () { }
+                f : function () { },
+                autobind: false
             });
             expect(btn.bind().unbind()).to.be.equal(btn);
         });

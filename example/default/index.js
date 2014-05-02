@@ -45,19 +45,12 @@ function main() {
             f : ƒ(log4)
         });
 
-    btn1.bind();
-    btn2.bind();
-    btn3.bind();
-    btn4.bind();
-
     var backBtn = new MButton.Touchend({
             el : document.getElementById('back'),
             f : function () {
                 window.location = '../index.html';
             }
         })
-
-    backBtn.bind();
 
     window.addEventListener('touchstart', function (evt) {
         evt.preventDefault();

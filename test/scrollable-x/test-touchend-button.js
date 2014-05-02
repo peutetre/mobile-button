@@ -23,7 +23,7 @@ describe('scrollableX/TouchendButton', function () {
                     el : initElement(),
                     f : function () { }
                 });
-            btn.bind();
+
             expect(function () { btn.bind(); }).to.throwException("Can't bind an already binded button.");
         });
         it('should raise an Error when calling .unbind() if unbinded', function () {
@@ -31,6 +31,7 @@ describe('scrollableX/TouchendButton', function () {
                     el : initElement(),
                     f : function () { }
                 });
+            btn.unbind();
             expect(function () { btn.unbind(); }).to.throwException("Can't unbind a unbinded button.");
         });
         it('should have a setActiveBorder method', function () {
@@ -46,7 +47,7 @@ describe('scrollableX/TouchendButton', function () {
                     el : initElement(),
                     f : function () { i = i+1; return Q.delay(200); }
                 });
-            btn.bind();
+
             // first fake activation
             btn.onTouchstart({ changedTouches:[{ identifier : 0 }] });
             btn.onTouchend({ changedTouches:[{ identifier : 0 }] });
@@ -66,7 +67,6 @@ describe('scrollableX/TouchendButton', function () {
                 f : function () { return Q.delay(200); }
             });
 
-            btn.bind();
             // fake activation
             btn.onTouchstart({ changedTouches:[{ identifier : 0 }] });
             expect(btn.el.classList.contains('active')).to.be(true);
@@ -79,7 +79,6 @@ describe('scrollableX/TouchendButton', function () {
                 f : function () { return Q.delay(100); }
             });
 
-            btn.bind();
             // fake activation
             btn.onTouchstart({ changedTouches:[{ identifier : 0 }] });
             btn.onTouchend({ changedTouches:[{ identifier : 0 }] });
@@ -89,7 +88,8 @@ describe('scrollableX/TouchendButton', function () {
         it('.bind should return the button', function () {
             var btn = new TouchendBtn({
                 el : initElement(),
-                f : function () { }
+                f : function () { },
+                autobind: false
             });
             expect(btn.bind()).to.be.equal(btn);
         });
@@ -98,7 +98,7 @@ describe('scrollableX/TouchendButton', function () {
                 el : initElement(),
                 f : function () { }
             });
-            expect(btn.bind().unbind()).to.be.equal(btn);
+            expect(btn.unbind()).to.be.equal(btn);
         });
         it('should not trigger his callback if finger moved more than 10px in the x axis', function (done) {
             var flag = false,
@@ -106,7 +106,6 @@ describe('scrollableX/TouchendButton', function () {
                     el : initElement(),
                     f : function () { flag = true; }
                 });
-            btn.bind();
             // fake activation
             btn.onTouchstart({ changedTouches:[{ identifier : 0, clientX:0, clientY: 0 }] });
             btn.onTouchmove({ changedTouches:[{ identifier : 0, clientX:12, clientY: 0}], preventDefault:function () {} });
@@ -122,7 +121,7 @@ describe('scrollableX/TouchendButton', function () {
                     el : initElement(),
                     f : function () { flag = true; }
                 });
-            btn.bind();
+
             // fake activation
             btn.onTouchstart({ changedTouches:[{ identifier : 0, clientX:0, clientY: 0 }] });
             btn.onTouchmove({ changedTouches:[{ identifier : 0, clientX:5, clientY: 0}], preventDefault:function () {} });

@@ -26,10 +26,6 @@ function main() {
             }
         });
 
-    defaultBtn.bind();
-    scrollablexBtn.bind();
-    scrollableyBtn.bind();
-
     window.addEventListener('touchstart', function (evt) {
         evt.preventDefault();
     }, false);
