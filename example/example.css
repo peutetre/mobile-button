@@ -64,6 +64,10 @@ button {
     border: 1px solid rgba(0, 0, 0, 0.5);
     color: rgb(177, 177, 177);
     font-size:18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
 }
 
 button.small {
