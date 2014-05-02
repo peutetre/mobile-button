@@ -39,12 +39,6 @@ function main() {
                 h1.style.color = 'rgb(77, 136, 182)';
             }
         });
-
-    backBtn.bind();
-    btn1.bind();
-    btn2.bind();
-    btn3.bind();
-
 }
 
 qstart.then(main).done();

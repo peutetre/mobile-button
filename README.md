@@ -34,6 +34,7 @@ All common options:
 * __el:DOMElement__, the button dom element
 * __f:function__, the callback function
 * __activeCls:String__, the css active class
+* __autobind:Boolean, option to auto bind the button, if __el__ is already available
 
 The callback function can return a promise. If so, the button will wait until it's
 fulfilled to return to an inactive state.
@@ -56,8 +57,6 @@ var btn = new MButton.Touchstart({
     },
     delay: 500 // in ms
 });
-
-btn.bind();
 ```
 
 ##### Touchend Button
@@ -75,13 +74,11 @@ var btn = new MButton.Touchend({
     },
     activeBorder: 20 // in px
 });
-
-btn.bind();
 ```
 
 #### Scrollable Y Buttons
 
-Buttons contained in a Y scrollable element (on ios 5+ with -webkit-overflow-scrolling:touch;).
+Buttons contained in a Y scrollable element (iscroll or on ios 5+ with -webkit-overflow-scrolling:touch;).
 
 ##### Touchend Button
 
@@ -101,13 +98,11 @@ var btn = new ScrollableBtn.Touchend({
     },
     tolerance: 5 // in px
 });
-
-btn.bind();
 ```
 
 #### Scrollable X Buttons
 
-Buttons contained in a X scrollable element  (on ios 5+ with -webkit-overflow-scrolling:touch;).
+Buttons contained in a X scrollable element  (iscroll or on ios 5+ with -webkit-overflow-scrolling:touch;).
 
 ##### Touchend Button
 
@@ -127,8 +122,6 @@ var btn = new ScrollableBtn.Touchend({
     },
     tolerance: 5 // in px
 });
-
-btn.bind();
 ```
 
 ### Build
@@ -157,6 +150,12 @@ Design taken from [@Noxdzine](http://twitter.com/noxdzine/) <a href="http://drib
 run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
+
+#### v0.3.0 05-02-2014
+
+* `autobind:true` by default now. No need to `bind()` when you don't need it!
+
+to upgrade from <= v0.2.0, you need to remove some `bind()` calls or add `autobind:false` to the button option.
 
 #### v0.2.0 03-05-2014
 
