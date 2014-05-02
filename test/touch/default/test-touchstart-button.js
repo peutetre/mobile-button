@@ -1,4 +1,4 @@
-var TouchstartBtn = require('../../lib/default/touchstart-button'),
+var TouchstartBtn = require('../../../lib/touch/default/touchstart-button'),
     Q = require('q'),
     expect = require('expect.js');
 

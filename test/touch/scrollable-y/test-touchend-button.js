@@ -1,4 +1,4 @@
-var TouchendBtn = require('../../lib/scrollable-y/touchend-button'),
+var TouchendBtn = require('../../../lib/touch/scrollable-y/touchend-button'),
     Q = require('q'),
     expect = require('expect.js'),
     initElement = function () {

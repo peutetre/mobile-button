@@ -3,10 +3,10 @@
  */
 
 require('./test-button');
-require('./default/test-touchstart-button');
-require('./default/test-touchend-button');
-require('./scrollable-x/test-touchend-button');
-require('./scrollable-y/test-touchend-button');
+require('./touch/default/test-touchstart-button');
+require('./touch/default/test-touchend-button');
+require('./touch/scrollable-x/test-touchend-button');
+require('./touch/scrollable-y/test-touchend-button');
 
 onload = function () {
     setTimeout(function () {
