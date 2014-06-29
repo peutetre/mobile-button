@@ -10,7 +10,7 @@ var Q = require('q'),
 function main() {
     var h1 = document.querySelector('h1'),
         scrollView = new IScroll('#wrapper', {
-            mouseWheel: true
+            mouseWheel: true, disableMouse: true
         }),
         backBtn = new MButton.Touchend({
             el : document.getElementById('back'),

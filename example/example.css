@@ -71,6 +71,21 @@ button {
     appearance: none;
 }
 
+button:hover {
+    background-color: rgb(37, 37, 37);
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(75, 75, 75)), to(rgb(37, 37, 37)));
+    background-image: -webkit-linear-gradient(top, rgb(75, 75, 75), rgb(37, 37, 37));
+    background-image: -moz-linear-gradient(top, rgb(75, 75, 75), rgb(37, 37, 37));
+    background-image: -ms-linear-gradient(top, rgb(75, 75, 75), rgb(37, 37, 37));
+    background-image: -o-linear-gradient(top, rgb(75, 75, 75), rgb(37, 37, 37));
+    -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 1px 1px rgba(255, 255, 255, 0.44);
+    -moz-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(255, 255, 255, 0.44);
+    -ms-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(255, 255, 255, 0.44);
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 1px 1px rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: rgb(200, 200, 200);
+}
+
 button.small {
     width: 40px;
     height: 40px;
@@ -116,7 +131,7 @@ button.small {
     font-family: sans-serif;
 }
 
-.active {
+button.active, button:active:hover {
     background: rgb(46, 46, 46);
 
     background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgba(0, 0, 0, 0.08)), to(rgba(255, 255, 255, 0.08)));
