@@ -9,6 +9,7 @@
     -moz-box-sizing:border-box;
     -ms-box-sizing:border-box;
     box-sizing:border-box;
+    outline: 0;
 }
 html, body {
     width:100%;
