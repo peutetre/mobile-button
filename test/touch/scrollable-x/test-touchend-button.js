@@ -1,4 +1,4 @@
-var TouchendBtn = require('../../lib/default/touchend-button'),
+var TouchendBtn = require('../../../lib/touch/scrollable-x/touchend-button'),
     Q = require('q'),
     expect = require('expect.js'),
     initElement = function () {
@@ -13,7 +13,7 @@ var TouchendBtn = require('../../lib/default/touchend-button'),
         return el;
     };
 
-describe('default/TouchendButton', function () {
+describe('scrollableX/TouchendButton', function () {
     it('must be an function', function () {
         expect(TouchendBtn).to.be.an('function');
     });
@@ -96,10 +96,40 @@ describe('default/TouchendButton', function () {
         it('.unbind should return the button', function () {
             var btn = new TouchendBtn({
                 el : initElement(),
-                f : function () { },
-                autobind: false
+                f : function () { }
             });
-            expect(btn.bind().unbind()).to.be.equal(btn);
+            expect(btn.unbind()).to.be.equal(btn);
+        });
+        it('should not trigger his callback if finger moved more than 10px in the x axis', function (done) {
+            var flag = false,
+                btn = new TouchendBtn({
+                    el : initElement(),
+                    f : function () { flag = true; }
+                });
+            // fake activation
+            btn.onTouchstart({ changedTouches:[{ identifier : 0, clientX:0, clientY: 0 }] });
+            btn.onTouchmove({ changedTouches:[{ identifier : 0, clientX:12, clientY: 0}], preventDefault:function () {} });
+            btn.onTouchend({ changedTouches:[{ identifier : 0, clientX:12, clientY: 0 }] });
+            setTimeout(function () {
+                expect(flag).to.be(false);
+                done();
+            },50);
+        });
+        it('should trigger his callback if finger moved less than 10px in the x axis', function (done) {
+            var flag = false,
+                btn = new TouchendBtn({
+                    el : initElement(),
+                    f : function () { flag = true; }
+                });
+
+            // fake activation
+            btn.onTouchstart({ changedTouches:[{ identifier : 0, clientX:0, clientY: 0 }] });
+            btn.onTouchmove({ changedTouches:[{ identifier : 0, clientX:5, clientY: 0}], preventDefault:function () {} });
+            btn.onTouchend({ changedTouches:[{ identifier : 0, clientX:5, clientY: 0 }] });
+            setTimeout(function () {
+                expect(flag).to.be(true);
+                done();
+            },50);
         });
     });
 });
