@@ -151,6 +151,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.4.0 08-08-2014
+
+* Handling pointer events.
+
 #### v0.3.0 05-02-2014
 
 * `autobind:true` by default now. No need to `bind()` when you don't need it!
