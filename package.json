@@ -7,6 +7,11 @@
     "email": "paul@42loops.com",
     "url": "https://github.com/peutetre"
   },
+  "contributors": [
+    {
+      "name": "Baptiste Morelle"
+    }
+  ],
   "keywords": [
     "browserify",
     "touchevents",
