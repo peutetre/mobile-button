@@ -151,6 +151,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.5.0 12-08-2014
+
+* Replaced the ClickButton with default, scrollable-x and scrollable-y buttons based on mouse events. The mobile button behavior is now consistent across all platforms, mobile and desktop.
+
 #### v0.4.0 08-08-2014
 
 * Handling pointer events.
