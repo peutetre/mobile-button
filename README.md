@@ -34,7 +34,8 @@ All common options:
 * __el:DOMElement__, the button dom element
 * __f:function__, the callback function
 * __activeCls:String__, the css active class
-* __autobind:Boolean, option to auto bind the button, if __el__ is already available
+* __autobind:Boolean__, option to auto bind the button, if __el__ is already available
+* __monotouchable:Boolean__, option to create a button a mono touchable element
 
 The callback function can return a promise. If so, the button will wait until it's
 fulfilled to return to an inactive state.
@@ -151,7 +152,11 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
-#### v0.5.0 12-08-2014
+#### v0.6.0 09-30-2014
+
+* Add `monotouchable` option
+
+#### v0.5.0 08-12-2014
 
 * Replaced the ClickButton with default, scrollable-x and scrollable-y buttons based on mouse events. The mobile button behavior is now consistent across all platforms, mobile and desktop.
 
