@@ -13,6 +13,12 @@ function main() {
                 window.location = 'default/index.html';
             }
         }),
+        defaultMonoBtn = new MButton.Touchend({
+            el : document.getElementById('mono-default'),
+            f : function () {
+                window.location = 'monotouchable/default/index.html';
+            }
+        }),
         scrollablexBtn = new MButton.Touchend({
             el : document.getElementById('scrollablex'),
             f : function () {
@@ -23,6 +29,18 @@ function main() {
             el : document.getElementById('scrollabley'),
             f : function () {
                 window.location = 'scrollable-y/index.html';
+            }
+        }),
+        scrollablexBtn = new MButton.Touchend({
+            el : document.getElementById('mono-scrollablex'),
+            f : function () {
+                window.location = 'monotouchable/scrollable-x/index.html';
+            }
+        }),
+        scrollableyBtn = new MButton.Touchend({
+            el : document.getElementById('mono-scrollabley'),
+            f : function () {
+                window.location = 'monotouchable/scrollable-y/index.html';
             }
         });
 
