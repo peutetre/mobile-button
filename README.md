@@ -152,6 +152,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.6.1 10-15-2014
+
+* Better handling of exceptions thrown from callback function with `Q.done`
+
 #### v0.6.0 09-30-2014
 
 * Add `monotouchable` option

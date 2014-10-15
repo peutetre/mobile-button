@@ -1,6 +1,6 @@
 {
   "name": "mobile-button",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A set of buttons for the mobile web",
   "author": {
     "name": "Paul Panserrieu",
@@ -10,6 +10,9 @@
   "contributors": [
     {
       "name": "Baptiste Morelle"
+    },
+    {
+      "name": "Nicolae Namolovan"
     }
   ],
   "keywords": [
