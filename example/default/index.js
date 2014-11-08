@@ -47,7 +47,7 @@ function main() {
             el : btnEl4,
             f : ƒ(log4)
         }),
-        btn5 = new MButton.PushButton({
+        btn5 = new MButton.Push({
             el : btnEl5,
             f : ƒ(log5),
             g : ƒ(log6)
