@@ -77,6 +77,27 @@ var btn = new MButton.Touchend({
 });
 ```
 
+##### Push Button
+
+A push button triggers the `f` callback on touchstart and the `g` callback on
+touchend or when the finger leaves the active zone of the underlying button dom
+element. As `f` and `g` are chained `g` always executes after `f`.
+
+This button accepts a __delay__ and a __g__ function in the `options` object.
+
+```javascript
+var btn = new MButton.Push({
+    el: myElement,
+    f: function () {
+        alert('f');
+    },
+    g: function () {
+        alert('g');
+    },
+    delay: 500 // in ms
+});
+```
+
 #### Scrollable Y Buttons
 
 Buttons contained in a Y scrollable element (iscroll or on ios 5+ with -webkit-overflow-scrolling:touch;).
