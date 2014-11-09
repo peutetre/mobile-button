@@ -1,0 +1,262 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name = "viewport" content ="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="mobile-web-app-capable" content="yes">
+        <title>mobile-button example</title>
+    </head>
+    <style type="text/css">
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            -ms-box-sizing:border-box;
+            box-sizing:border-box;
+        }
+        html, body {
+            width:100%;
+            height:100%;
+            margin:0;
+            padding:0;
+            background: rgb(36, 36, 36);
+        }
+        body {
+            -ms-touch-action: none;
+            touch-action: none;
+            margin-top: 30px;
+            height:-webkit-calc(100% - 30px);
+            height:-moz-calc(100% - 30px);
+            height:-ms-calc(100% - 30px);
+            height:calc(100% - 30px);
+        }
+        .cell {
+            width: 160px;
+            height: 50px;
+            border-radius: 8px;
+            line-height: 50px;
+            font-family: sans-serif;
+            font-size: 24px;
+            display:inline-block;
+            margin:5px 10px;
+            padding: 0 5px;
+        }
+        .button {
+            background: rgba(204, 204, 204, 0.37);
+            text-align: center;
+            background-color: #ef9554;
+            background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(231, 154, 56)), to(rgb(247, 128, 0)));
+            background-image: -webkit-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+            background-image: -moz-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+            background-image: -ms-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+            background-image: -o-linear-gradient(top, rgb(231, 154, 56), rgb(247, 128, 0));
+            -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            -moz-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            -ms-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            font-family: sans-serif;
+        }
+        .active {
+            background: rgb(46, 46, 46);
+
+            background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgba(0, 0, 0, 0.08)), to(rgba(255, 255, 255, 0.08)));
+            background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+            background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+            background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+            background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.08));
+
+            -webkit-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                                inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                                0px 2px 2px rgba(255, 255, 255, 0.09);
+            -moz-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                             inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                             0px 2px 2px rgba(255, 255, 255, 0.09);
+            -ms-box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                            inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                            0px 2px 2px rgba(255, 255, 255, 0.09);
+            box-shadow: inset 0px 0px 1px 1px rgba(0, 0, 0, 0.2),
+                        inset 0px 4px 10px 2px rgba(0, 0, 0, 0.33),
+                        0px 2px 2px rgba(255, 255, 255, 0.09);
+            color: rgb(156, 156, 156);
+        }
+        .log {
+            padding: 0 0 0 10px;
+            width:100px
+        }
+        h1 {
+            font-family: sans-serif;
+            color: rgb(158, 158, 158);
+            text-align: center;
+        }
+        p {
+            color: rgb(158, 158, 158);
+            font-family: sans-serif;
+            font-size: 18px;
+            padding: 0 10px;
+            margin: 5px 0;
+        }
+        ul {
+            margin:0;
+            padding:0;
+        }
+        button {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            line-height: 40px;
+            padding: 0 5px;
+            text-align: center;
+            background-color: rgb(37, 37, 37);
+            background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(58, 58, 58)), to(rgb(37, 37, 37)));
+            background-image: -webkit-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+            background-image: -moz-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+            background-image: -ms-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+            background-image: -o-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+            -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 1px 1px rgba(240, 240, 240, 0.44);
+            -moz-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            -ms-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 1px 1px rgba(240, 240, 240, 0.2);
+            font-family: sans-serif;
+            border: none;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            color: rgb(177, 177, 177);
+            font-size:18px;
+        }
+        #back {
+            position: absolute;
+            left:20px;
+            top:10px;
+        }
+        table {
+            height:100%;
+        }
+        td {
+            line-height: 100%;
+            padding: 10px 50px;
+            background-color: rgb(37, 37, 37);
+            background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(58, 58, 58)), to(rgb(37, 37, 37)));
+            background-image: -webkit-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+            background-image: -moz-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+            background-image: -ms-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+            background-image: -o-linear-gradient(top, rgb(58, 58, 58), rgb(37, 37, 37));
+            -webkit-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 1px 1px rgba(240, 240, 240, 0.44);
+            -moz-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            -ms-box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 3px 3px rgba(240, 240, 240, 0.44);
+            box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.44), inset 0px 1px 1px rgba(240, 240, 240, 0.2);
+            font-family: sans-serif;
+            margin: 0;
+            color: rgb(177, 177, 177);
+            font-size: 18px;
+        }
+        hr {
+            background: rgba(19, 19, 19, 0.62);
+            border-left: none;
+            border-right: none;
+            height: 3px;
+            border-top: 1px solid rgba(235, 235, 235, 0);
+            border-bottom: 1px solid rgba(235, 235, 235, 0.18);
+        }
+        header {
+            height:150px;
+        }
+        section {
+            height:-webkit-calc(100% - 180px);
+            height:-moz-calc(100% - 180px);
+            height:-ms-calc(100% - 180px);
+            height:calc(100% - 180px);
+            position: absolute;
+            z-index: 1;
+            top: 180px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+        .btn {
+            color:rgb(219, 96, 96);
+        }
+        hr.end{
+            position: absolute;
+            top: 170px;
+            z-index: 10000;
+            width: 100%;
+        }
+        .scroller {
+            position: absolute;
+            z-index: 1;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            height:100%;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+
+    </style>
+    <body>
+        <header>
+            <button id='back'>◀</button>
+            <h1>ScrollableX</h1>
+            <hr>
+            <p>Example for the scrollable X implementation of the Touchend buttons:</p>
+            <hr class='end'>
+        </header>
+        <section id="wrapper">
+            <div class='scroller'>
+                <table cellspacing="0">
+                    <tr>
+                        <td>1</td>
+                        <td class='btn' id='btn1'>Hello I am a touchend Button</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>1</td>
+                        <td class='btn' id='btn2'>Hello I am another touchend Button</td>
+                        <td>2</td>
+                        <td class='btn' id='btn3'>Yet another touchend Button</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <script src="main.js"></script>
+    </body>
+</html>
