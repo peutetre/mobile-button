@@ -25,7 +25,7 @@ var MButton = require('mobile-button');
 All buttons have the following methods:
 
 * __setEl(el:DOMElement)__: set the button dom element
-* __setF(el:DOMElement)__: set the callback function
+* __setF(f:function)__: set the callback function
 * __bind()__: attach all events handlers
 * __unbind()__: remove all events handlers
 
