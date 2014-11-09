@@ -25,7 +25,7 @@ var MButton = require('mobile-button');
 All buttons have the following methods:
 
 * __setEl(el:DOMElement)__: set the button dom element
-* __setF(el:DOMElement)__: set the callback function
+* __setF(f:function)__: set the callback function
 * __bind()__: attach all events handlers
 * __unbind()__: remove all events handlers
 
@@ -74,6 +74,27 @@ var btn = new MButton.Touchend({
         alert('...');
     },
     activeBorder: 20 // in px
+});
+```
+
+##### Push Button
+
+A push button triggers the `f` callback on touchstart and the `g` callback on
+touchend or when the finger leaves the active zone of the underlying button dom
+element. As `f` and `g` are chained `g` always executes after `f`.
+
+This button accepts a __delay__ and a __g__ function in the `options` object.
+
+```javascript
+var btn = new MButton.Push({
+    el: myElement,
+    f: function () {
+        alert('f');
+    },
+    g: function () {
+        alert('g');
+    },
+    delay: 500 // in ms
 });
 ```
 
@@ -151,6 +172,10 @@ Design taken from [@Noxdzine](http://twitter.com/noxdzine/) <a href="http://drib
 run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
+
+#### v0.7.0 11-09-2014
+
+* Add a PushButton which accepts two callback functions.
 
 #### v0.6.1 10-15-2014
 
