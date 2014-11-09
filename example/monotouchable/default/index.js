@@ -21,10 +21,9 @@ function main() {
                 logEl.innerHTML = 'start ƒ';
                 return Q.delay(1000).then(function () {
                     logEl.innerHTML = 'end ƒ';
-                    Q.delay(1000).then(function () {
+                    return Q.delay(1000).then(function () {
                         logEl.innerHTML = '';
                     });
-                    return;
                 });
             }
         },

@@ -19,38 +19,37 @@ function main() {
         btnEl4 = document.getElementById('end2'),
         btnEl5 = document.getElementById('end3'),
         emptyƒ = function () { },
-        ƒ = function (logEl) {
+        ƒ = function (logEl, label) {
             return function (evt) {
-                logEl.innerHTML = 'start ƒ';
+                logEl.innerHTML = 'start ' + label;
                 return Q.delay(1000).then(function () {
-                    logEl.innerHTML = 'end ƒ';
-                    Q.delay(1000).then(function () {
+                    logEl.innerHTML = 'end ' + label;
+                    return Q.delay(1000).then(function () {
                         logEl.innerHTML = '';
                     });
-                    return;
                 });
             }
         },
         btn1 = new MButton.Touchstart({
             el : btnEl1,
-            f : ƒ(log1)
+            f : ƒ(log1, 'f')
         }),
         btn2 = new MButton.Touchstart({
             el : btnEl2,
-            f : ƒ(log2)
+            f : ƒ(log2, 'f')
         }),
         btn3 = new MButton.Touchend({
             el : btnEl3,
-            f : ƒ(log3)
+            f : ƒ(log3, 'f')
         }),
         btn4 = new MButton.Touchend({
             el : btnEl4,
-            f : ƒ(log4)
+            f : ƒ(log4, 'f')
         }),
         btn5 = new MButton.Push({
             el : btnEl5,
-            f : ƒ(log5),
-            g : ƒ(log6)
+            f : ƒ(log5, 'f'),
+            g : ƒ(log6, 'g')
         });
 
     var backBtn = new MButton.Touchend({
