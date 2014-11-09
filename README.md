@@ -173,6 +173,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.7.0 11-09-2014
+
+* Add a PushButton which accepts two callback functions.
+
 #### v0.6.1 10-15-2014
 
 * Better handling of exceptions thrown from callback function with `Q.done`
