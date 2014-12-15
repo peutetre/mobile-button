@@ -36,6 +36,7 @@ All common options:
 * __activeCls:String__, the css active class
 * __autobind:Boolean__, option to auto bind the button, if __el__ is already available
 * __monotouchable:Boolean__, option to create a button a mono touchable element
+* __setActiveCls:Boolean__, option to control if the css active class is used or not, default to true
 
 The callback function can return a promise. If so, the button will wait until it's
 fulfilled to return to an inactive state.
@@ -172,6 +173,10 @@ Design taken from [@Noxdzine](http://twitter.com/noxdzine/) <a href="http://drib
 run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
+
+#### v0.8.0 12-15-2014
+
+* Add `setActiveCls` option
 
 #### v0.7.0 11-09-2014
 

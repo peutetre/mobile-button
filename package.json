@@ -1,6 +1,6 @@
 {
   "name": "mobile-button",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "A set of buttons for the mobile web",
   "author": {
     "name": "Paul Panserrieu",
@@ -43,7 +43,7 @@
     "clean": "rm test/main.js example/main.js example/default/main.js example/scrollable-x/main.js example/scrollable-y/main.js"
   },
   "dependencies": {
-    "q": "1.0.x"
+    "q": "~1.1.2"
   },
   "devDependencies": {
     "mocha": "~1.12.0",
