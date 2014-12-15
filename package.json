@@ -1,6 +1,6 @@
 {
   "name": "mobile-button",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "A set of buttons for the mobile web",
   "author": {
     "name": "Paul Panserrieu",
@@ -30,20 +30,20 @@
     "url": "git://github.com/peutetre/mobile-button.git"
   },
   "scripts": {
-    "build-test": "./node_modules/browserify/bin/cmd.js ./test/test.js -o ./test/main.js --debug;",
-    "build-ex": "./node_modules/browserify/bin/cmd.js ./example/index.js -o ./example/main.js --debug",
-    "build-ex1": "./node_modules/browserify/bin/cmd.js ./example/default/index.js -o ./example/default/main.js --debug",
-    "build-ex2": "./node_modules/browserify/bin/cmd.js ./example/scrollable-x/index.js -o ./example/scrollable-x/main.js --debug",
-    "build-ex3": "./node_modules/browserify/bin/cmd.js ./example/scrollable-y/index.js -o ./example/scrollable-y/main.js --debug",
-    "build-ex4": "./node_modules/browserify/bin/cmd.js ./example/monotouchable/default/index.js -o ./example/monotouchable/default/main.js --debug",
-    "build-ex5": "./node_modules/browserify/bin/cmd.js ./example/monotouchable/scrollable-x/index.js -o ./example/monotouchable/scrollable-x/main.js --debug",
-    "build-ex6": "./node_modules/browserify/bin/cmd.js ./example/monotouchable/scrollable-y/index.js -o ./example/monotouchable/scrollable-y/main.js --debug",
+    "build-test": "browserify ./test/test.js -o ./test/main.js --debug;",
+    "build-ex": "browserify ./example/index.js -o ./example/main.js --debug",
+    "build-ex1": "browserify ./example/default/index.js -o ./example/default/main.js --debug",
+    "build-ex2": "browserify ./example/scrollable-x/index.js -o ./example/scrollable-x/main.js --debug",
+    "build-ex3": "browserify ./example/scrollable-y/index.js -o ./example/scrollable-y/main.js --debug",
+    "build-ex4": "browserify ./example/monotouchable/default/index.js -o ./example/monotouchable/default/main.js --debug",
+    "build-ex5": "browserify ./example/monotouchable/scrollable-x/index.js -o ./example/monotouchable/scrollable-x/main.js --debug",
+    "build-ex6": "browserify ./example/monotouchable/scrollable-y/index.js -o ./example/monotouchable/scrollable-y/main.js --debug",
     "build": "npm run build-test; npm run build-ex; npm run build-ex1; npm run build-ex2; npm run build-ex3; npm run build-ex4; npm run build-ex5; npm run build-ex6;",
     "test": "npm run build; grunt",
     "clean": "rm test/main.js example/main.js example/default/main.js example/scrollable-x/main.js example/scrollable-y/main.js"
   },
   "dependencies": {
-    "q": "1.0.x"
+    "q": "~1.1.2"
   },
   "devDependencies": {
     "mocha": "~1.12.0",
