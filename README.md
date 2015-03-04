@@ -174,6 +174,10 @@ run the <a href="http://peutetre.github.io/mobile-button/test/">tests</a>
 
 ## ChangeLog
 
+#### v0.8.1 03-04-2015
+
+* fix `touchcancel` usage [#24](https://github.com/peutetre/mobile-button/issues/24)
+
 #### v0.8.0 12-15-2014
 
 * Add `setActiveCls` option
